@@ -21,7 +21,7 @@
   <?php
   // set database connection parameters
   $host = "127.0.0.1";
-  $user = "rgordonatrsgc";
+  $user = "rsgc_hill_r";
   $pass = "";
   $db = "library";
   $port = 3306;
@@ -62,6 +62,53 @@
     <input type="text" name="title" value="">
     <br>
     <input type="submit" value="Submit">
+  </form> 
+  
+  <h1>Our amazing library patrons are:</h1>
+  <?php
+  // And now perform simple query – make sure it's working
+  $query = "SELECT * FROM patron;";
+  $result = mysqli_query($connection, $query);
+  
+  // Iterate over the result set
+  echo "<table>";
+  echo "<tr>";
+  echo "<th>";
+  echo "ID";
+  echo "</th>";
+  echo "<th>";
+  echo "First Name";
+  echo "</th>";
+  echo "<th>";
+  echo "Last Name";
+  echo "</th>";
+  echo "</tr>";
+  
+  while ($row = mysqli_fetch_assoc($result)) {
+      echo "<tr>";
+      echo "<td>";
+      echo $row['id'];
+      echo "</td>";
+      echo "<td>";
+      echo $row['firstname'];
+      echo "</td>";
+      echo "<td>";
+      echo $row['lastname'];
+      echo "</td>";
+      echo "</tr>";
+  }
+  echo "</table>";
+  ?>
+  
+  <h1>Add a patron to the database:</h1>
+  <form action="addPatronHandler.php" method="post">
+    Patron First Name:<br>
+    <input type="text" name="firstname" value="">
+    <br>
+    Patron Last Name:<br>
+    <input type="text" name="lastname" value="">
+    <br>
+    <input type="submit" value="Enter">
   </form> 
 </body>
 </html>
