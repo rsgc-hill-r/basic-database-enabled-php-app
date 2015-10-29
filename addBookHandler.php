@@ -35,9 +35,9 @@
   
   // Check to see if query succeeded
   if (mysqli_query($connection, $query)) {
-      echo "<p>Success! The book " . htmlspecialchars($_POST['title']) . " was added to the database.</p>";
+      echo "<p>Nice one! The book " . htmlspecialchars($_POST['title']) . " was added to the database.</p>";
   } else {
-      echo "<p>Uh oh! The book " . htmlspecialchars($_POST['title']) . " could not be added to the database.</p>";
+      echo "<p>Error: The book " . htmlspecialchars($_POST['title']) . " could not be added to the database.</p>";
   }
   
   ?>

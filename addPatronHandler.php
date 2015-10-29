@@ -35,10 +35,10 @@
   
   // Check to see if query succeeded
   if (mysqli_query($connection, $query)) {
-      echo "<p>Success! The patron " . htmlspecialchars($_POST['firstname']) . " " . 
+      echo "<p>Nice one! The patron " . htmlspecialchars($_POST['firstname']) . " " . 
         htmlspecialchars($_POST['lastname']) . " was added to the database.</p>";
   } else {
-      echo "<p>Uh oh! The patron " . htmlspecialchars($_POST['firstname']) . " " . 
+      echo "<p>Error: The patron " . htmlspecialchars($_POST['firstname']) . " " . 
         htmlspecialchars($_POST['lastname']) .  " could not be added to the database.</p>";
   }
   
